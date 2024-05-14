@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "423957321332",
+    "project_id": "horizon-voice",
+    "storage_bucket": "horizon-voice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423957321332:android:033bfaeb9bebd3d2832321",
+        "android_client_info": {
+          "package_name": "com.example.feedback_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_ob4w53mAKxq-juOfNNI_7ky55R3Cbl0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
