@@ -9,7 +9,9 @@ import 'package:flutter/material.dart';
 
 class QuestionAnalytics extends StatefulWidget {
   final int activePage;
-  QuestionAnalytics({super.key, this.activePage = 0});
+  final List<String> list;
+
+  QuestionAnalytics({super.key, this.activePage = 0, required this.list});
   @override
   State<QuestionAnalytics> createState() => _QuestionAnalyticsState();
 }
@@ -21,31 +23,29 @@ class _QuestionAnalyticsState extends State<QuestionAnalytics> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: AppConfigs.inst_stu_questions
+      children: widget.list
           .map((e) => Column(
                 children: [
                   ListTile(
-                    leading: Text(
-                        'Q${AppConfigs.inst_stu_questions.indexOf(e) + 1}'),
+                    leading: Text('Q${widget.list.indexOf(e) + 1}'),
                     title: Text(e,
                         style: TextStyle(
                             fontSize: 16,
-                            fontWeight: activeIndex ==
-                                    AppConfigs.inst_stu_questions.indexOf(e)
+                            fontWeight: activeIndex == widget.list.indexOf(e)
                                 ? FontWeight.bold
                                 : FontWeight.normal)),
                     onTap: () {
                       setState(() {
-                        activeIndex = AppConfigs.inst_stu_questions.indexOf(e);
+                        activeIndex = widget.list.indexOf(e);
                       });
                     },
                   ),
-                  activeIndex == AppConfigs.inst_stu_questions.indexOf(e)
+                  activeIndex == widget.list.indexOf(e)
                       ? Card(
                           elevation: 4,
                           child: Container(
                             color: Colors.white70,
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 vertical: 16, horizontal: 8),
                             child: Row(
                               children: [
@@ -84,7 +84,7 @@ class _QuestionAnalyticsState extends State<QuestionAnalytics> {
                                               index.toString(),
                                         ),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 16,
                                       ),
                                       // legend of colors
@@ -96,7 +96,8 @@ class _QuestionAnalyticsState extends State<QuestionAnalytics> {
                                             Row(
                                               children: [
                                                 Container(
-                                                  padding: EdgeInsets.symmetric(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
                                                       vertical: 4,
                                                       horizontal: 8),
                                                   decoration: BoxDecoration(
@@ -105,8 +106,8 @@ class _QuestionAnalyticsState extends State<QuestionAnalytics> {
                                                             4),
                                                     color: getColor(i),
                                                   ),
-                                                  margin:
-                                                      EdgeInsets.only(right: 2),
+                                                  margin: const EdgeInsets.only(
+                                                      right: 2),
                                                   child: Text(
                                                     '> ${i - 1}',
                                                   ),
@@ -152,7 +153,7 @@ class _QuestionAnalyticsState extends State<QuestionAnalytics> {
                                                 ),
                                             ]),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 16,
                                       ),
                                       // legend of colors
@@ -164,7 +165,8 @@ class _QuestionAnalyticsState extends State<QuestionAnalytics> {
                                             Row(
                                               children: [
                                                 Container(
-                                                  padding: EdgeInsets.symmetric(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(
                                                       vertical: 4,
                                                       horizontal: 8),
                                                   decoration: BoxDecoration(
@@ -181,8 +183,8 @@ class _QuestionAnalyticsState extends State<QuestionAnalytics> {
                                                                     .facultyColors
                                                                     .length],
                                                   ),
-                                                  margin:
-                                                      EdgeInsets.only(right: 2),
+                                                  margin: const EdgeInsets.only(
+                                                      right: 2),
                                                   child: Text(
                                                     AppConfigs.faculties[i],
                                                   ),
@@ -194,7 +196,7 @@ class _QuestionAnalyticsState extends State<QuestionAnalytics> {
                                     ],
                                   ),
                                 ),
-                                Expanded(
+                                const Expanded(
                                     child: Column(
                                   children: [
                                     ListTile(

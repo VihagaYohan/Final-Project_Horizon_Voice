@@ -22,13 +22,13 @@ class SummaryAnalytics extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
         child: ListView(
-          padding: EdgeInsets.only(top: 16, left: 16, right: 16),
+          padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
           children: [
-            Text('Summary Analytics',
+            const Text('Summary Analytics',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
             Text('${AppConfigs.faculties[activeIndex]} Faculty',
-                style: TextStyle(fontSize: 18)),
-            SizedBox(
+                style: const TextStyle(fontSize: 18)),
+            const SizedBox(
               height: 16,
             ),
             DashboardSection(
@@ -108,11 +108,46 @@ class SummaryAnalytics extends StatelessWidget {
               height: 16,
             ),
             DashboardSection(
-                title: 'Result Analysis',
+                title: 'Result Analysis - Staff Institution Evaluation',
                 subtitle: 'from 36 Reviews',
                 child: QuestionAnalytics(
                   activePage: activeIndex,
+                  list: AppConfigs.inst_staff_questions,
                 )),
+            const SizedBox(height: 16),
+            DashboardSection(
+                title: 'Result Analysis - Staff Batch Rating Form',
+                subtitle: 'from 36 Reviews',
+                child: QuestionAnalytics(
+                    activePage: activeIndex,
+                    list: AppConfigs.inst_library_questions)),
+            const SizedBox(
+              height: 16,
+            ),
+            DashboardSection(
+                title: 'Result Analysis - Staff Course Evaluation Form',
+                subtitle: 'from 36 Reviews',
+                child: QuestionAnalytics(
+                    activePage: activeIndex,
+                    list: AppConfigs.inst_library_questions)),
+            const SizedBox(
+              height: 16,
+            ),
+            DashboardSection(
+                title: 'Result Analysis - Academic Course Evaluation',
+                subtitle: 'from 36 Reviews',
+                child: QuestionAnalytics(
+                    activePage: activeIndex,
+                    list: AppConfigs.inst_course_questions)),
+            const SizedBox(
+              height: 16,
+            ),
+            DashboardSection(
+                title: 'Result Analysis - Academic Batch Rating Form',
+                subtitle: 'from 36 Reviews',
+                child: QuestionAnalytics(
+                    activePage: activeIndex,
+                    list: AppConfigs.inst_batch_rating_questions)),
           ],
         ),
       ),
