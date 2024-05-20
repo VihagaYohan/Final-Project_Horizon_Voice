@@ -148,6 +148,33 @@ class SummaryAnalytics extends StatelessWidget {
                 child: QuestionAnalytics(
                     activePage: activeIndex,
                     list: AppConfigs.inst_batch_rating_questions)),
+            const SizedBox(
+              height: 16,
+            ),
+            DashboardSection(
+                title: 'Result Analysis - Student Evaluation',
+                subtitle: 'from 36 Reviews',
+                child: QuestionAnalytics(
+                    activePage: activeIndex,
+                    list: AppConfigs.stu_lecturer_questions)),
+            const SizedBox(
+              height: 16,
+            ),
+            DashboardSection(
+                title: 'Result Analysis - Student Library Evaluation',
+                subtitle: 'from 36 Reviews',
+                child: QuestionAnalytics(
+                    activePage: activeIndex,
+                    list: AppConfigs.stu_library_evaluation)),
+            const SizedBox(
+              height: 16,
+            ),
+            DashboardSection(
+                title: 'Result Analysis - Student Institute Evaluation',
+                subtitle: 'from 36 Reviews',
+                child: QuestionAnalytics(
+                    activePage: activeIndex,
+                    list: AppConfigs.stu_institute_evaluation)),
           ],
         ),
       ),
