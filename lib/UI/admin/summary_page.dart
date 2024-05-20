@@ -134,16 +134,7 @@ class SummaryAnalytics extends StatelessWidget {
               height: 16,
             ),
             DashboardSection(
-                title: 'Result Analysis - Academic Course Evaluation',
-                subtitle: 'from 36 Reviews',
-                child: QuestionAnalytics(
-                    activePage: activeIndex,
-                    list: AppConfigs.inst_course_questions)),
-            const SizedBox(
-              height: 16,
-            ),
-            DashboardSection(
-                title: 'Result Analysis - Academic Batch Rating Form',
+                title: 'Result Analysis - Academic Library Evaluation',
                 subtitle: 'from 36 Reviews',
                 child: QuestionAnalytics(
                     activePage: activeIndex,
@@ -152,7 +143,7 @@ class SummaryAnalytics extends StatelessWidget {
               height: 16,
             ),
             DashboardSection(
-                title: 'Result Analysis - Student Evaluation',
+                title: 'Result Analysis - Student-Lecture Evaluation',
                 subtitle: 'from 36 Reviews',
                 child: QuestionAnalytics(
                     activePage: activeIndex,
